@@ -131,6 +131,9 @@ async def super(message, rotate: str):
   if rotate.upper() == "IDOL":
     await message.send("https://tenor.com/view/superidol-gif-23969581")
 
+@client.command()
+async def waifu(message):
+    await message.send("https://tenor.com/view/no-simping-simp-gif-19518299")
 
 @client.command()
 async def coding(message):
