@@ -7,7 +7,7 @@ from datetime import datetime
 
 TESTING_GUILD_ID = 919969623946969119
 
-client = commands.Bot(command_prefix="p!")
+client = commands.Bot(command_prefix="m.c ")
 
 
 @client.command()
@@ -24,13 +24,9 @@ async def mute(message, user: nextcord.Member, *, reason = None):
 @client.command()
 async def investing(message):
   await message.send("""If you are new to investing in bitcoin,stocks etc. instead of asking in general ask in these channels:
-
 ⬛︱nfts - For help with NFT
-
 🎲︱crypto - For help with Crypto
-
 💼︱career-discussion - For help with Future careers and current
-
 📊︱stocks - For help with Stocks""")
 #Rules:
 
@@ -91,51 +87,72 @@ async def rule12(message):
 @client.command()
 async def party(message):
   await message.send("https://cdn.discordapp.com/emojis/854728647616757780.gif?size=48&size=40")
-  await message.send("https://cdn.discordapp.com/emojis/854728647616757780.gif?size=48&size=40")
-  await message.send("https://cdn.discordapp.com/emojis/854728647616757780.gif?size=48&size=40")
-  await message.send("https://cdn.discordapp.com/emojis/854728647616757780.gif?size=48&size=40")
 
-#Tags
+@client.command()
+async def vibe(message):
+  await message.send("https://cdn.discordapp.com/emojis/896774356825411644.gif?v=1&size=64")
+
+#Tags 
 @client.command()
 async def rotateMHM(message):
   await message.send('https://cdn.discordapp.com/emojis/851682650966982698.gif?size=56')
-
-@client.command()
-async def who(message):
-  await message.send('https://replit.com/@MangoExpress/Boteeeeeeeee')
 
 @client.command()
 async def rotate(message, rotate: str):
   if rotate.upper() == "MHM":
     await message.send("https://cdn.discordapp.com/emojis/851682650966982698.gif?size=56")
 
+@client.command()
+async def whoASKED(message):
+  await message.send('https://tenor.com/view/me-looking-for-who-asked-looking-for-who-asked-who-asked-me-looking-gif-20318322')
+
+@client.command()
+async def who(message, rotate: str):
+  if rotate.upper() == "ASKED":
+    await message.send("https://tenor.com/view/me-looking-for-who-asked-looking-for-who-asked-who-asked-me-looking-gif-20318322")  
+
+
+@client.command()
+async def me(message):
+  await message.send('https://tenor.com/view/i-asked-goku-mui-goku-mui-meme-gif-22463661')
+
+
+@client.command()
+async def uno(message):
+  await message.send('https://cdn.discordapp.com/emojis/900643070155034645.gif?v=1&size=64')
+
+
+@client.command()
+async def superIDOL(message):
+  await message.send('https://tenor.com/view/superidol-gif-23969581')
+
+@client.command()
+async def super(message, rotate: str):
+  if rotate.upper() == "IDOL":
+    await message.send("https://tenor.com/view/superidol-gif-23969581")
+
 
 @client.command()
 async def coding(message):
-  await message.send("""
-  1. #🐍︱python - For Python development
-  2. #🕸︱web-dev - For Front-End and Back-End(Database) development
-  3. #🔮︱ai-ml - For Artificial Intelligence and Machine Learning
-  4. #🤖︱discord-dev  - For discord development
-  5. #🎮︱game-dev - For Game development
-  6. #︱not-python - For other than python like Java,C,C#.""")
+  await message.send(""" 
+   🐍︱python - For Python development
+  🕸︱web-dev - For Front-End and Back-End(Database) development
+  🔮︱ai-ml - For Artificial Intelligence and Machine Learning
+  🤖︱discord-dev  - For discord development
+  🎮︱game-dev - For Game development
+  👉🏽︱not-python - For other than python like Java,C,C#.""")
 
 @client.command()
 async def investment_channels(message):
   await message.send("""
- #︱nfts - For help with NFT
- #︱crypto - For help with Crypto
- #︱career-discussion - For help with Future careers and current
- #︱stocks - For help with Stocks""")
+ ︱nfts - For help with NFT
+ ︱crypto - For help with Crypto
+ ︱career-discussion - For help with Future careers and current
+ ︱stocks - For help with Stocks""")
 #
 @client.event
 async def on_ready():
   print("Online")
-
-@client.command()
-async def ping(message):
-  await message.send("eeeee")
-
 
 s_m_a = {}
 s_m_b = {}
@@ -208,7 +225,17 @@ async def snipe(ctx):
     embed.set_footer(text=f"Deleted in : #{channel_name}")
 
     await ctx.channel.send(embed=embed)
+#
+@client.command()
+async def kick(ctx ,member : nextcord.Member,*, reason=None):
+  await member.kick(reason=reason)
+  await ctx.member.send(f"You where kicked because: {+reason}")
 
+@client.command()
+async def ban(ctx ,member : nextcord.Member,*, reason=None):
+  await member.ban(reason=reason)
+  await ctx.member.send(f"You where banned because: {+reason}")
+#
 
 @client.slash_command(
     name="announce",
@@ -237,5 +264,3 @@ async def on_command_error(message, error):
 
 
 client.run(os.environ["TOKEN"])
-
-
