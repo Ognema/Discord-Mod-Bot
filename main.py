@@ -86,13 +86,35 @@ async def rule12(message):
   
 @client.command()
 async def party(message):
-  await message.send("https://cdn.discordapp.com/emojis/854728647616757780.gif?size=48&size=40")
+  await message.send("https://cdn.discordapp.com/emojis/854728647616757780.gif?size=48&size=40") 
+
+@client.command()
+async def yes(message):
+  await message.send("https://tenor.com/view/hotline-bling-drake-meme-approve-gif-15664502") 
+
+@client.command()
+async def ok(message):
+  await message.send("https://tenor.com/view/ok-okay-awkward-smile-gif-5307535")
+
+
+@client.command()
+async def no(message):
+  await message.send("https://tenor.com/view/drake-drakeno-drakenah-nodrake-nopedrake-gif-12919677")
+
+
+@client.command()
+async def shy(message):
+  await message.send("https://tenor.com/view/anime-love-blush-cute-nervous-gif-16656636")
+
+@client.command()
+async def pain(message):
+  await message.send("https://tenor.com/view/naruto-pain-meme-mala-animacion-bad-animation-gif-17986467")
 
 @client.command()
 async def vibe(message):
   await message.send("https://cdn.discordapp.com/emojis/896774356825411644.gif?v=1&size=64")
 
-#Tags 
+#Tags  
 @client.command()
 async def rotateMHM(message):
   await message.send('https://cdn.discordapp.com/emojis/851682650966982698.gif?size=56')
@@ -103,6 +125,16 @@ async def rotate(message, rotate: str):
     await message.send("https://cdn.discordapp.com/emojis/851682650966982698.gif?size=56")
 
 @client.command()
+async def deadCHAT(message):
+  await message.send('https://tenor.com/view/speed-dead-chat-fun-gif-18992739')
+
+@client.command()
+async def dead(message, rotate: str):
+  if rotate.upper() == "CHAT":
+    await message.send("https://tenor.com/view/speed-dead-chat-fun-gif-18992739")
+
+
+@client.command()
 async def whoASKED(message):
   await message.send('https://tenor.com/view/me-looking-for-who-asked-looking-for-who-asked-who-asked-me-looking-gif-20318322')
 
@@ -110,6 +142,17 @@ async def whoASKED(message):
 async def who(message, rotate: str):
   if rotate.upper() == "ASKED":
     await message.send("https://tenor.com/view/me-looking-for-who-asked-looking-for-who-asked-who-asked-me-looking-gif-20318322")  
+
+
+
+@client.command()
+async def rickROLL(message):
+  await message.send('https://tenor.com/view/dance-moves-dancing-singer-groovy-gif-17029825')
+
+@client.command()
+async def rick(message, rotate: str):
+  if rotate.upper() == "ROLL":
+    await message.send("https://tenor.com/view/dance-moves-dancing-singer-groovy-gif-17029825")
 
 
 @client.command()
